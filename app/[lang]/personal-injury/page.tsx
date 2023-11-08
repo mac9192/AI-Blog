@@ -8,6 +8,7 @@ import {getDictionary} from '../../../lib/getDictionary'
 import lawyer2 from '../../../public/assets/lawyer2.png' 
 import Faq3 from '../../../frontComponents/Faq3'
 import Iframe from 'react-iframe'
+import stars from '../public/assets/icon-stars.png'
  
  
 import injury from '../../../public/assets/icon-injury.svg'
@@ -37,7 +38,7 @@ const PersonalInjury = async ({
     <Image
       layout="fill" 
       className="object-center object-cover pointer-events-none"
-      src={lawyerpic}
+      src={stars}
       alt="atlanta"
       priority
     />
