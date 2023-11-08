@@ -5,7 +5,7 @@ import lawyerpic from '../../../public/assets/lawyerpic.jpg'
 import ServiceCard from '@frontComponents/ServiceCard'
 import Testimonials from '@frontComponents/Testimonials'
 import {getDictionary} from '../../../lib/getDictionary'
-import lawyer2 from '../../../public/assets/lawyerpic-2.jpg.png' 
+import lawyer2 from '../../../public/assets/lawyerpic-2.jpg' 
 import Faq3 from '../../../frontComponents/Faq3'
 import Iframe from 'react-iframe'
  
@@ -47,7 +47,7 @@ const PersonalInjury = async ({
                 
  
        </div>
-        <p>Update</p>
+        <p>Update1</p>
   
 
    </div>  
