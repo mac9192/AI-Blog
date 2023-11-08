@@ -34,15 +34,7 @@ const PersonalInjury = async ({
         
          
  <div className="relative   ">
-       <Image 
-           layout="fill"
-           className="object-center object-cover pointer-events-none   "
-           src={'/assets/lawyerpic.jpg'}
-           alt="header pic"
-       
-      
-           
-       />
+     
        <div className="relative z-1 md:min-h-[450px]  sm:min-h-[300px]">
                 
  
