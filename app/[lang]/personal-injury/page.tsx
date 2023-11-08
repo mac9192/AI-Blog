@@ -8,7 +8,7 @@ import {getDictionary} from '../../../lib/getDictionary'
 import lawyer2 from '../../../public/assets/lawyer2.png' 
 import Faq3 from '../../../frontComponents/Faq3'
 import Iframe from 'react-iframe'
-import stars from '../../../public/assets/icon-stars.png'
+import stars from '../../../public/assets/profile-group.jpg'
  
  
 import injury from '../../../public/assets/icon-injury.svg'
