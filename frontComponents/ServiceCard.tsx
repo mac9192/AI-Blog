@@ -18,7 +18,7 @@ console.log('servicessss', card)
   <div className="w-100 h-fit group">
     <div className="relative overflow-hidden">
  
-      <Image className="h-[250px] w-full object-cover" width={500} height={30} src={card.bgImage} alt=""/>
+      <Image className="  w-full object-cover" width={100} height={30} src={card.bgImage} alt=""/>
     <p className="text-[22px] leading-relaxed">{card.title}</p>
  
  
