@@ -33,20 +33,47 @@ const PersonalInjury = async ({
 
         
          
- <div className="relative   ">
-     
-       <div className="relative z-1 md:min-h-[450px]  sm:min-h-[300px]">
-                
- 
-       </div>
-        
-  
+<div className="relative ">
+    <Image
+      layout="fill" 
+      className="object-center object-cover pointer-events-none"
+      src={lawyerpic}
+      alt="atlanta"
+      priority
+    />
+   <div className="relative z-1 md:p-12">
+      <div className="flex flex-col">
+      <div className="  px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+       
+       <h2 className="mb-4 text-4xl  w-full text-center mx-auto tracking-tight leading-none text-white md:text-5xl lg:text-6xl  m-10 ">{dictionary.header2.header}</h2>
+       
+           
+          <div className="flex items-center justify-center text-white">
+            
+         </div>
+      
+           
+         </div>
+         <div className="flex bg items-center justify-center text-white sm:m-10 text-center">
+        <p className="md:text-[28px] md:p-[80px] max-w-7xl text-2xl w-full ">{dictionary.header2.testimonials}</p>
+    </div>
+    <div className="flex items-center justify-center text-white">
+           
+    </div>
 
-   </div>  
+    <div className="flex flex-col py-12">
+        <button className="flex mx-auto text-white bg-logoBlue  border-0 py-2 px-8 focus:outline-none hover:bg-gray rounded text-lg">{dictionary.header2.btn}</button>
+      
+    
+    </div>
+    
+      </div>
+   </div>
+</div> 
  <div>
      <div className="md:hidden sm:block p-6">
                      <p className="text-logoBlue   sm:text-[28px] text-[32px] font-bold track-leading ">COMPASSIONATE ADVOCATES FOR PERSONAL INJURY VICTIMS</p>
-                     <p className="text-black track-leading pt-5 ">At our personal injury law firm, we are dedicated to providing unwavering support and expert legal representations to those who have been injured due to the negligence of others. With a deep commitment to justice and a track record of successful outcomes, our team of compassionate advocates is here to help you secure the compensation you deserve.</p>
+                     <p className="text-black track-leading pt-5 ">At our personal injury law firm, we are dedicated to providing unwavering support and expert legal representation to those who have been injured due to the negligence of others. With a deep commitment to justice and a track record of successful outcomes, our team of compassionate advocates is here to help you secure the compensation you deserve.</p>
      </div>
  </div>
 
