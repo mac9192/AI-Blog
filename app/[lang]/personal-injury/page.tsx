@@ -47,7 +47,7 @@ const PersonalInjury = async ({
                 
  
        </div>
-        <p>Update1</p>
+    
   
 
    </div>  
