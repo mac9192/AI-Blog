@@ -1,5 +1,6 @@
 'use client'
 import React, { useRef, useEffect } from "react";
+ 
 
 interface myComponentProps {
   dictionary: any
@@ -38,7 +39,7 @@ const Header2: React.FC<myComponentProps> = ({dictionary}:{dictionary:any}) => {
       </div>
 
       <video   className=" " autoPlay loop muted ref={videoRef}>
-        <source src={'/bgvideo.mp4'}  />
+        <source src={'/assets/bgvideo-2.mov'}  />
       </video>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-semibold">
       {dictionary.frontHeader.topLine}
