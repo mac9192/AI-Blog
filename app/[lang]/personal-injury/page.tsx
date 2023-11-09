@@ -5,7 +5,7 @@ import lawyerpic from '../../../public/assets/lawyerpic.jpg'
 import ServiceCard from '@frontComponents/ServiceCard'
 import Testimonials from '@frontComponents/Testimonials'
 import {getDictionary} from '../../../lib/getDictionary'
-import lawyer2 from '../../../public/assets/lawyerpic-2.jpg' 
+import bg from '../../../public/assets/pi_bg.jpg' 
 import Faq3 from '../../../frontComponents/Faq3'
 import Iframe from 'react-iframe'
  
@@ -37,7 +37,7 @@ const PersonalInjury = async ({
        <Image 
            layout="fill"
            className="object-center object-cover pointer-events-none md:min-h-[650px] bg-fixed "
-           src={lawyer2}
+           src={bg}
            alt="header pic"
            priority
            quality={80}
