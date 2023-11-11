@@ -125,7 +125,7 @@ const PersonalInjury = async ({
 
  
 
-<div className="md:bg-white sm:bg-logoBlue md:p-10 md:mt-[338px] lg:mt-[315px] sm:mt-[0px] text-center   md:mx-auto sm:text-white md:text-black sm:p-3  md:mb-[-40px] pt-[200px]  ">
+<div className="md:bg-white sm:bg-logoBlue md:p-0 md:mt-[338px] lg:mt-[315px] sm:mt-[0px] text-center   md:mx-auto sm:text-white md:text-black sm:p-3  md:mb-[-40px] pt-[200px]  ">
     <div className="flex sm:flex-col md:flex-row md:container md:mx-auto    text-center mx-auto pt-16  mb-16">
             
             <div className="md:w-/4 sm:text-center sm:mx-auto sm:w-full md:text-[22px] md:max-w-[800px] md:text-right">
