@@ -5,11 +5,15 @@ const Immigration = () => {
 
     return (
 
-   
-               <div className="relative h-32 w-32 mx-auto  ...">
-            <div className="absolute inset-x-5 bottom-0 h-16 ...">08</div>
-       </div>
-   
+   <div>
+          <div className="flex items-center justify-center h-96 bg-fixed bg-parallax bg-cover">
+        <h1 className="text-5xl text-white">
+            Free Shipping Worldwide
+        </h1>
+        <p>hello</p>
+   </div>
+
+   </div>
     )
 }
 

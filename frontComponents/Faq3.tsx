@@ -7,7 +7,7 @@ const Faq2 = ({dictionary}:{dictionary:any}) => {
   return (
 
         <div>
-            <section className="text-black-600 body-font  bg-graydark  ">
+            <section className="text-black-600 body-font  bg-white  ">
             <div className="  text-[36px] ] sm:py-8 mx-auto text-center max-w-screen-2xl text-logoBlue">
            {dictionary.faq2.header}
                   </div>

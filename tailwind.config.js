@@ -35,10 +35,15 @@ module.exports = {
         gray300:'hsl(210, 40%, 96.1%)',
         logoBlue:'hsl(196,98%,19%)',
         graydark:'hsl(0,0%,85%)',
-        backgroundImage: {
-          'hero': "url('/assets/herobg.png')",
-        },
+       
       },
+ backgroundImage: {
+          'hero': "url('/assets/herobg.png')",
+          'parallax': 'url("public/assets/img-cityatl.jpeg")',
+          'piSmall':  'url("public/assets/lawbg1.png")',
+          'groupbg': 'url("public/assets/profile-group.jpg")'
+        },
+
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif']
       },
