@@ -9,7 +9,7 @@ import museum from '../public/assets/img-immigration2.webp'
 
 const HomeBlog = ({dictionary}:{dictionary:any}) => {
   return (
-      <div className=" ">
+      <div className=" pt-12 ">
              <div className="md:p-12 md:mt- text-[36px] sm:p-10 mx-auto text-center max-w-screen-2xl text-logoBlue   ">
            {dictionary.events.header}
                   </div>

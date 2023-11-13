@@ -15,6 +15,7 @@ import laweyer3 from '../../../public/assets/lawyer3.jpg'
 import lawfam from '../../../public/assets/lawfam.png'
 import bgpi from '../../../public/assets/carcrashpi.jpeg'
 import injury from '../../../public/assets/icon-injury.svg'
+import HomeBlog from '@frontComponents/HomeBlog'
  
 
 
@@ -66,8 +67,10 @@ const PersonalInjury = async ({
      </div>
  </div>
 
-   <div className="relative container   sm:hidden md:block h-32 w-32 mx-auto md:min-h-[225px] md:min-w-[1000px] lg:min-w-[1200px] md:mt-[-360px] lg:mt-[-338px]   mb-[160px] ...">
-            <div className="absolute inset-x-5 bottom-0 h-16  text-white mx-auto     opacity-80">
+ 
+
+   <div className="relative container   sm:hidden md:block h-32 w-32 mx-auto md:min-h-[225px] md:min-w-[1000px] lg:min-w-[1200px] md:mt-[-360px] lg:mt-[-336px]   mb-[160px] ...">
+            <div className="absolute inset-x-5 bottom-0 h-16  text-white mx-auto     opacity-100">
                 <div className="flex flex-row  border-l-4 border-logoBlue ">
                     <div className="w-4/5 flex flex-col bg-white min-h-[229px] p-[20px]">
                         <p className="text-logoBlue    text-[32px] font-bold track-leading ">COMPASSIONATE ADVOCATES FOR PERSONAL INJURY VICTIMS</p>
@@ -123,6 +126,10 @@ const PersonalInjury = async ({
         
 </div>
 
+<div className="bg-white h-screen">
+
+</div>
+
  
 
 <div className="md:bg-white sm:bg-logoBlue md:p-0 md:mt-[338px] lg:mt-[315px] sm:mt-[0px] text-center   md:mx-auto sm:text-white md:text-black sm:p-3  md:mb-[-40px] pt-[200px]  ">
@@ -168,6 +175,9 @@ const PersonalInjury = async ({
 
    </div>
 
+ 
+   <HomeBlog dictionary={dictionary}/>
+
 
     <div>
 
@@ -185,51 +195,9 @@ const PersonalInjury = async ({
 
 
 
+{/*  */}
 
-
-            <div className=" text-center bg-white ">
-
-               <div className="flex-col space-y-3 md:p-[30px] sm:p-[50px]  md:container md:mx-auto">
-            
-          
-                   <div className="flex md:flex-row sm:flex-col text-center  sm:space-y-3 md:space-y-0  ">
-
-            
-                        <div className="md:w-1/3   text-center md:mx-auto  "> 
-                        <ServiceCard card={Service_Card[0]}/>
-                        </div>
-                        <div className="md:w-1/3   text-center md:mx-auto     "> 
-                        <ServiceCard card={Service_Card[1]} />
-                        </div>
-                        <div className="md:w-1/3   text-center md:mx-auto   "> 
-                        <ServiceCard card={Service_Card[2]}/>
-                        </div>
-
-                   </div>
-                   <div className="flex md:flex-row sm:flex-col text-center sm:space-y-3 md:space-y-0 min-h-[300px]">
-                        <div className="md:w-1/3 mr-5 text-center md:mx-auto sm:w-full   "> 
-                        <ServiceCard card={Service_Card[3]}/>
-                        </div>
-                        <div className="md:w-1/3 mr-5 text-center md:mx-auto sm:w-full   "> 
-                        <ServiceCard card={Service_Card[4]}/>
-                        </div>
-                        <div className="md:w-1/3 mr-5 text-center md:mx-auto sm:w-full   "> 
-                        <ServiceCard card={Service_Card[5]}/>
-                        </div>
-          
-                   </div>
-    
-               </div>
-
-               <div className="bg-white ">
-                   <Faq3 dictionary={dictionary} />
-               </div>
-
-                <div>
-
-               <Testimonials  dictionary={dictionary}/>
-                </div>
-            </div>
+     
         </div>
     )
 }
@@ -283,4 +251,55 @@ export default PersonalInjury
           
                 </div>
             </div>
+*/
+
+
+/*
+
+
+       <div className=" text-center bg-white ">
+
+               <div className="flex-col space-y-3 md:p-[30px] sm:p-[50px]  md:container md:mx-auto">
+            
+          
+                   <div className="flex md:flex-row sm:flex-col text-center  sm:space-y-3 md:space-y-0  ">
+
+            
+                        <div className="md:w-1/3   text-center md:mx-auto  "> 
+                        <ServiceCard card={Service_Card[0]}/>
+                        </div>
+                        <div className="md:w-1/3   text-center md:mx-auto     "> 
+                        <ServiceCard card={Service_Card[1]} />
+                        </div>
+                        <div className="md:w-1/3   text-center md:mx-auto   "> 
+                        <ServiceCard card={Service_Card[2]}/>
+                        </div>
+
+                   </div>
+                   <div className="flex md:flex-row sm:flex-col text-center sm:space-y-3 md:space-y-0 min-h-[300px]">
+                        <div className="md:w-1/3 mr-5 text-center md:mx-auto sm:w-full   "> 
+                        <ServiceCard card={Service_Card[3]}/>
+                        </div>
+                        <div className="md:w-1/3 mr-5 text-center md:mx-auto sm:w-full   "> 
+                        <ServiceCard card={Service_Card[4]}/>
+                        </div>
+                        <div className="md:w-1/3 mr-5 text-center md:mx-auto sm:w-full   "> 
+                        <ServiceCard card={Service_Card[5]}/>
+                        </div>
+          
+                   </div>
+    
+               </div>
+
+               <div className="bg-white ">
+                   <Faq3 dictionary={dictionary} />
+               </div>
+
+                <div>
+
+               <Testimonials  dictionary={dictionary}/>
+                </div>
+            </div>
+
+
 */

@@ -28,8 +28,24 @@ const Header2: React.FC<myComponentProps> = ({dictionary}:{dictionary:any}) => {
   }, []);
 
   return (
-    <div className="relative lg:mt-[-141px] md:mt-[-138px]">
-      <div className="grid-btn">
+    <div className="relative lg:mt-[-117px] md:mt-[-138px]">
+
+      {/*
+      
+    
+      */}
+     
+
+      <video   className=" " autoPlay loop muted ref={videoRef}>
+        <source src={'/assets/bgvideo-2.mov'}  />
+      </video>
+      <div className="absolute top-1/2 left-[300px] transform -translate-x-1/2 -translate-y-1/2 text-white   bg-logoBlue min-w-[500px] max-w-[600px] text-left text-5xl p-7 opacity-80 mt-4 font-extrabold sm:hidden md:block">
+      <h1 className=" ">{dictionary.frontHeader.topLine} </h1>
+      <p className="text-2xl mt-6">Atlanta Immigration Law and Personal Injury</p>
+      
+      {/*   
+      
+     <div className="grid-btn pt-7 space-x-5">
         <button className="btn" onClick={handlePlay}>
        Play
         </button>
@@ -37,13 +53,9 @@ const Header2: React.FC<myComponentProps> = ({dictionary}:{dictionary:any}) => {
           Pause
         </button>
       </div>
+      */}
+     
 
-      <video   className=" " autoPlay loop muted ref={videoRef}>
-        <source src={'/assets/bgvideo-2.mov'}  />
-      </video>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-semibold">
-      {dictionary.frontHeader.topLine}
-      <p>Home</p>
       </div>
     </div>
   );
