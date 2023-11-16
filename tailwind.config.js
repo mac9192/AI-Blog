@@ -15,7 +15,7 @@ module.exports = {
   theme: {
     screens: {
       sm: '300px',
-      md: '1000px', //868
+      md: '1100px', //868 -- //1000
       lg: '1406px',
       xl: '1750px',
     },
@@ -40,8 +40,13 @@ module.exports = {
  backgroundImage: {
           'hero': "url('/assets/herobg.png')",
           'parallax': 'url("public/assets/img-cityatl.jpeg")',
-          'piSmall':  'url("public/assets/pi-small-bg.png")',
-          'groupbg': 'url("public/assets/profile-group.jpg")'
+          'piSmall':  'url("public/assets/lawbg1.png")',
+          'groupbg': 'url("public/assets/profile-group.jpg")',
+          'carAccident': 'url("public/assets/card-car-accident.jpeg")',
+          'truck' : 'url("public/assets/card-truck.jpg")',
+          'slip': 'url("public/assets/card-slip-and-falls.jpg")',
+          'death': 'url("public/assets/card-wrongful-death.jpg")',
+          'worker':'url("public/assets/card-workComp.jpg")',
         },
 
       fontFamily: {
