@@ -127,11 +127,11 @@ const PersonalInjury = async ({
         
 </div>
 
-<div className="mt-[400px] sm:mt-[50px] md:container md:mx-auto md:pl-[130px] md:pr-[130px]">
+<div className="mt-[400px] sm:mt-[50px]   md:mx-auto md:pl-[130px] md:pr-[130px]">
       <p className="md:mt-[400px]  text-4xl tracking-wide w-full border-b-4 border-dotted border-logoBlue text-logoBlue p-3">Personal Injury Services:</p>
 </div>
  
-<div className='grid md:container md:mx-auto md:grid-cols-3 sm:grid-cols-1 gap-x-2 gap-y-3 grid-flow-row-dense pt-10 max-w-[1000px] md:pl-[130px] md:pr-[130px]  '>
+<div className='grid   md:mx-auto md:grid-cols-3 sm:grid-cols-1 gap-x-2 gap-y-3 grid-flow-row-dense pt-10   md:pl-[130px] md:pr-[130px]  '>
    
       <div className='bg-logoBlue   shadow-xl min-h-[350px] row-span-1 md:col-span-2' > 
       <div className=" flex md:flex-row w-full  sm:flex-col sm:pl-10 ">
@@ -165,7 +165,7 @@ const PersonalInjury = async ({
    
     </div>
      
-<div className='grid md:grid-cols-3 md:container md:mx-auto sm:grid-cols-1 gap-x-2 gap-y-3 grid-flow-row-dense  mt-[19px] md:pl-[130px] md:pr-[130px] '>
+<div className='grid md:grid-cols-3   md:mx-auto sm:grid-cols-1 gap-x-2 gap-y-3 grid-flow-row-dense  mt-[19px] md:pl-[130px] md:pr-[130px] '>
        
 <div className='bg-slip bg-cover shadow-xl min-h-[350px]' >
          <div className="relative h-96   ...">
@@ -201,7 +201,7 @@ const PersonalInjury = async ({
  
 
 <div className="md:bg-white sm:bg-logoBlue md:p-0 md:mt-[338px] lg:mt-[25px] sm:mt-[0px] text-center   md:mx-auto sm:text-white md:text-black sm:p-3  md:mb-[-40px] pt-[200px]  ">
-    <div className="flex sm:flex-col md:flex-row md:container md:mx-auto    text-center mx-auto pt-16  mb-16">
+    <div className="flex sm:flex-col md:flex-row   md:mx-auto    text-center mx-auto pt-16  mb-16">
             
             <div className="md:w-/4 sm:text-center sm:mx-auto sm:w-full md:text-[22px] md:max-w-[800px] md:text-right">
                 <Image className="  md:w-1/10  " width={5200} height={10} src={lawfam} alt=""/>
