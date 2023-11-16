@@ -143,7 +143,7 @@ const PersonalInjury = async ({
             
                 <p className="pt-5 text-2xl text-white">FROM BASIC RESEARCH TO PRACTICAL APPLICATIONS</p>
                 <p className="w-full text-1xl pt-6 text-white">We provide our clients with compassionate, yet aggressive representatio  vehicle accidents.</p>
-                <p className="w-full text-1xl  text-white pt-12 sm:mb-5">Learn More.</p>
+                <p className="w-full text-1xl  text-white pt-12 sm:mb-5">Learn More Here...</p>
             </div>
         </div>
       </div>
