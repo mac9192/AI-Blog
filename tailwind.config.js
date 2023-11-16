@@ -40,7 +40,7 @@ module.exports = {
  backgroundImage: {
           'hero': "url('/assets/herobg.png')",
           'parallax': 'url("public/assets/img-cityatl.jpeg")',
-          'piSmall':  'url("public/assets/lawbg1.png")',
+          'piSmall':  'url("public/assets/pi-small-bg.png")',
           'groupbg': 'url("public/assets/profile-group.jpg")'
         },
 
