@@ -23,7 +23,7 @@ const postBody = ({ body }: {body:string}) => {
 
 
   return (
-    <div className="rich-text text-white">
+    <div className="rich-text text-black text-[16px] pt-10 tracking-wide ">
       {getParsedHTML(body)}
     </div>
   )

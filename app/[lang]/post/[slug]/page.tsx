@@ -197,7 +197,7 @@ const page = async ({params}:{params:{slug:string; lang:string}}) => {
   const dictionary = await getDictionary(locale)
 
   return (
-  <div className="bg-slate-700 pt-10 ">
+  <div className="bg-white pt-10 ">
 
 
         {/* Add JSON-LD to your page Open Graph Social Media shareable article metadata */}
@@ -211,8 +211,8 @@ const page = async ({params}:{params:{slug:string; lang:string}}) => {
       <PostHero locale={locale} post={post} />
          {/*Post Body and Social Share */}
       <div className="flex flex-col md:flex-row gap-10 mt-10">
-        <div className="relative">
-           <div className="sticky flex md:flex-col items-center gap-5 top-20">
+        <div className="relative mt-11">
+           <div className="sticky flex md:flex-col items-center gap-5 top-40">
              <div className="font-medium md:hidden">Share this content: </div>
              <SocialLink
           isShareURL={true}

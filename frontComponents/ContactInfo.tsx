@@ -11,12 +11,27 @@ const ContactInfo = ({dictionary}:{dictionary:any}) => {
                   </div>
  
   <section className="mb-33 rounded-lg">
+    
     <div className="relative h-[300px] overflow-hidden rounded-lg  bg-[50%] bg-no-repeat bg-[url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')]"></div>
     <div className=" md:container md:mx-auto items-center mx-auto px-6 md:px-12">
       <div
         className="block rounded-lg bg-[hsla(0,0%,100%,0.6)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]   dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]">
         <div className="flex flex-wrap">
-          <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 mt-11 lg:mb-0 lg:w-5/12 lg:px-6">
+        <div className="flex md:flex-row mx-auto text-center sm:flex-col mx-auto w-full">
+                    <div className="mx-auto text-center  p-3 mx-auto ">
+                    <p className="text-logoBlue text-2xl">Office Number</p>
+                    <p className="text-xl pt-1" >(855) 274-2366</p>
+                    </div>
+                    <div className="mx-auto text-center  p-3 ">
+                    <p className="text-logoBlue text-2xl">Email Address</p>
+                    <p className="text-xl pt-1">info@ChevesBriceno.com</p>
+                    </div>
+                    <div className="mx-auto text-center  p-3 ">
+                      <p className="text-logoBlue text-2xl">Atlanta Location</p>
+                      <p className="text-xl pt-1">3295 River Exchange Dr. Suite 420</p>
+                    </div>
+                </div>
+          <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 mt-5 lg:mb-0 lg:w-5/12 lg:px-6">
             <form>
               <div className="relative mb-6" data-te-input-wrapper-init>
               <input  placeholder="First Name" type="text" id="first-name" name="first-name" className="text-[18px] p-2 w-full bg-white rounded border border-gray-300 focus:border-logoBlue focus:ring-2 focus:ring-logoBlue text-base outline-none text-black   px-3 leading-8 transition-colors duration-200 ease-in-out"/>
@@ -51,20 +66,7 @@ const ContactInfo = ({dictionary}:{dictionary:any}) => {
       
           
               <div className="w-full shrink-0 grow-0 basis-auto md:w-6/12 md:px-3 lg:w-full lg:px-6 xl:mb-12   mx-auto items-center  ">
-                <div className="flex md:flex-row mx-auto text-center sm:flex-col mx-auto w-full">
-                    <div className="mx-auto text-center  p-3 mx-auto ">
-                    <p className="text-logoBlue text-2xl">Office Number</p>
-                    <p className="text-xl pt-1" >(855) 274-2366</p>
-                    </div>
-                    <div className="mx-auto text-center  p-3 ">
-                    <p className="text-logoBlue text-2xl">Email Address</p>
-                    <p className="text-xl pt-1">info@ChevesBriceno.com</p>
-                    </div>
-                    <div className="mx-auto text-center  p-3 ">
-                      <p className="text-logoBlue text-2xl">Atlanta Location</p>
-                      <p className="text-xl pt-1">3295 River Exchange Dr. Suite 420</p>
-                    </div>
-                </div>
+              
               <div className="w-full">
                    <Image className="w-full mx-auto pt-5"src = {map} alt="/" width="1000" height="500" priority={true} />
               </div>

@@ -1,16 +1,32 @@
 import React from 'react'
 import Link from "next/link"
 import LangSwithcer from '../blog-components/navigation/langSwithcer'
+import {useState} from 'react'
 
 
 interface navBar {
     locale: string,
     dictionary: any
 }
+
+
+
+
+
 const Dropdown = ({locale, dictionary}:navBar ) => {
+
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const toggleMobileMenu = () => {
+      setMobileMenuOpen(!isMobileMenuOpen);
+    };
+  
+
   return (
     <div>
-        <div className="md:hidden">
+        <div className={`${
+            isMobileMenuOpen ? 'hidden' : 'block'
+          } `}>
      
      <nav className="bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900 ">
         
@@ -19,20 +35,26 @@ const Dropdown = ({locale, dictionary}:navBar ) => {
                
                  <ul className="mb-4 space-y-4 md:mb-0">
                  <li>
-                     <Link href={`/${locale}/personal-injury`}>{dictionary.menu.personalInjury}</Link>
+                     <Link onClick={toggleMobileMenu}  href={`/${locale}/ `}>{dictionary.menu.home}</Link>
+                </li>
+                
+                 <li>
+                     <Link onClick={toggleMobileMenu}  href={`/${locale}/personal-injury`}>{dictionary.menu.personalInjury}</Link>
                     </li>
                   <li>
-                      
-                        <Link href={`/${locale}/immigration`}>{dictionary.menu.immigrationLaw}</Link>
+                 
+                    <Link onClick={toggleMobileMenu} href={`/${locale}/immigration`}>{dictionary.menu.immigrationLaw}</Link>
+             
+                        
                     </li>
                     <li>
-                        <Link href={`/`}>{dictionary.menu.aboutUs}</Link>
+                        <Link onClick={toggleMobileMenu} href={`/`}>{dictionary.menu.aboutUs}</Link>
                     </li>
                     <li>
-                        <Link href={`/${locale}/blog`}>BLOG</Link>
+                        <Link onClick={toggleMobileMenu} href={`/${locale}/blog`}>BLOG</Link>
                     </li>
                     <li>
-                        <Link href={`/`}>{dictionary.menu.contact}</Link>
+                        <Link onClick={toggleMobileMenu} href={`/`}>{dictionary.menu.contact}</Link>
                     </li>
                     <li>
                   <LangSwithcer locale={locale} />

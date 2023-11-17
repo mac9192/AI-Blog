@@ -1,20 +1,33 @@
+import {getDictionary} from '../../../lib/getDictionary'
+import HomeBlog from '@frontComponents/HomeBlog'
+import HeaderImmigration from '../../../servicesComponents/HeaderImmigration'
+import ServiceCardsImmigration from '@servicesComponents/ServiceCardsImmigration'
+import TestimonialsImmigration from '@servicesComponents/TestimonialsImmigration'
 
 
-const Immigration = () => {
+const Immigration = async ({
+    params,
+  }: {
+    params: {
+      lang: string;
+      };
+  }) => {
 
+    const locale = params.lang
 
+    const dictionary = await getDictionary(locale)
+    
     return (
+ 
 
-   <div>
-          <div className="flex items-center justify-center h-96 bg-fixed bg-parallax bg-cover">
-        <h1 className="text-5xl text-white">
-            Free Shipping Worldwide
-        </h1>
-        <p>hello</p>
-   </div>
-
-   </div>
+<div>
+        <HeaderImmigration />
+        <ServiceCardsImmigration />
+        <TestimonialsImmigration />
+        <HomeBlog dictionary={dictionary}/>
+ </div>
     )
 }
 
 export default Immigration
+

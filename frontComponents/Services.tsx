@@ -29,7 +29,7 @@ const services = ({dictionary}:{dictionary:any}) => {
           </div>
           <div>
            
-            <img src=" https://servicescardpub.s3.us-east-2.amazonaws.com/img-crash.e1d720a2.webp" alt="A beautiful landscape" width="700" height="500"/>
+            <Image src={immigration} alt="A beautiful landscape" width="670" height="500"/>
 
   <h2 className="p-5 mx-auto text-center text-[32px]">{dictionary.services.immigration}</h2>
             <p className="md:max-w-2xl py-5 text-[20px] mx-auto"> {dictionary.services.immigrationdesc}</p>

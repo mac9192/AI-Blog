@@ -15,9 +15,9 @@ const postContent = async ({post, isPostPage = false, locale}:PostContentProps) 
   const dictionary = await getDictionary(locale)
 
   return (
-    <div className="space-y-2 text-white">
+    <div className="space-y-2 text-black ">
         <div 
-            className={`flex items-center gap-2  text-neutral-400 ${
+            className={`flex items-center gap-2  text-black ${
               isPostPage ? "text-sm": "text-xs @md:text-sm"
               }`}>
             <div
@@ -45,7 +45,7 @@ const postContent = async ({post, isPostPage = false, locale}:PostContentProps) 
         <p className="leading-snug ">
             {post.description}
         </p>
-       { !isPostPage && (<div className="flex items-center gap-2 pt-3">
+       { !isPostPage && (<div className="flex items-center gap-2 pt-3 text-logoBlue font-bold">
               {dictionary.buttons.readMore} <ArrowRight size="14" />
         </div> )}
     </div>

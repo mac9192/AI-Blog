@@ -21,12 +21,12 @@ const postCard = ({post, layout = "vertical", reverse = false, locale }:PostProp
     <Link 
     className={`  ${
       layout === 'vertical'
-      ? "grid grid-cols-1 md:grid-cols-2 gap-10 items-center  " 
-      : "space-y-10 "} `}
+      ? "grid grid-cols-1 md:grid-cols-2 gap-10 items-center shadow-2xl p-5 " 
+      : "space-y-10 shadow-2xl p-5"} `}
     href={`/${locale}/post/${post.slug}`}
     >
      <Image //FIX MD BREAKPOINT
-        className={` rounded-md w-full object-cover object-center lg:max-h-[300px] sm:max-h-[230px] ${
+        className={` rounded-md w-full shadow-2xl object-cover object-center lg:max-h-[300px] sm:max-h-[230px]  ${
             reverse ? "md:order-last":""
         }`} 
         alt={post.title} 
