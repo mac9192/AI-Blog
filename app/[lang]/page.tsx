@@ -18,12 +18,10 @@ import Events from '../../frontComponents/Events'
 import ContactInfo from '../../frontComponents/ContactInfo'
 import H2 from '../../frontComponents/Header2'
 import Mobile from '../../frontComponents/Navigation'
- 
- 
-
-
 import {getDictionary} from '../../lib/getDictionary'
 import HomeBlog from '@frontComponents/HomeBlog'
+import AccordionFaq from '@frontComponents/AccordionFaq'
+import AccordionFaq2 from '@frontComponents/AccordionFaq2'
 
 
 
@@ -49,14 +47,12 @@ const page = async ({
   
 <Services dictionary={dictionary}/> 
     
-    <CTA dictionary={dictionary}/>
-     
-    <Faq dictionary={dictionary}/>
+
+        <AccordionFaq dictionary={dictionary}/>
     <Header3 dictionary={dictionary}/>
-    <Faq2 dictionary={dictionary}/>
- 
-    <HomeBlog dictionary={dictionary} />
- 
+    <AccordionFaq2 dictionary={dictionary}/>
+    
+    
  
     </div>
   )

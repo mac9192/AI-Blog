@@ -1,4 +1,5 @@
 import React from 'react'
+import { createDirectus, rest, readItems } from '@directus/sdk';
 import PostCard from "../../../blog-components/post/postCard"
 import PostList from "../../../blog-components/post/postList"
 import CTACard from "../../../blog-components/elements/CTACard"
@@ -32,8 +33,10 @@ export default async function page ({
   
   const getAllPosts = async() => {
     try {
-      const posts = await directus.items("post").readByQuery({
-        fields: [
+      const posts = await directus.request(
+        readItems('post', {
+
+          fields: [
           "*", //Will get everything from our table
           "author.id",
           "author.first.name",// (.) period means: go up a level on tables to the relational tables
@@ -43,14 +46,16 @@ export default async function page ({
           "translations.*",
           "category.translations.*"
         ],
-      }) ;
-      
+        
+     
+        })
 
+      )        
     if(locale ==="en"){
-        return posts.data;
+        return posts;
     }else{
       //Replace original 'en' with 'es'
-      const localisedPosts = posts.data?.map((post:any)=>{
+      const localisedPosts = posts.map((post:any)=>{
         return {
           ...post,
           title: post.translations[0].title,
@@ -73,6 +78,8 @@ export default async function page ({
   };
 
   const posts = await getAllPosts();
+
+  
 
 //console.log("new",posts)
 

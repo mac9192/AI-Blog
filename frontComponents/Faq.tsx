@@ -4,10 +4,10 @@ import gerardo from '../public/assets/profile-gerardo.png'
 
 const Faq = ({dictionary}:{dictionary:any}) => {
   return (
-    <div>
+    <div className="mt-10 mb-10">
         <section className="text-black-600 body-font   mb-5   ">
         <div className="md:p-10 md:text-[36px] sm:text-[25px] sm:py-8  mx-auto text-center max-w-screen-2xl text-logoBlue">
-               {dictionary.faq.header}
+               <p className="text-5xl">OUR TEAM</p>
               </div>
   <div className=" lg:container md:mx-auto px-5   flex flex-wrap">
     

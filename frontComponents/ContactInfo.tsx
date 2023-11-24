@@ -1,8 +1,15 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
 import map from '../public/assets/img-map.png'
+import toast from "react-hot-toast"
+import {sendEmail} from '../contactForm/sendEmail'
+import { experimental_useFormStatus as useFormStatus} from 'react-dom'
+import SubmitBtn from './SubmitBtn'
 
 const ContactInfo = ({dictionary}:{dictionary:any}) => {
+
+  const {pending} = useFormStatus()
   return (
     <div>
       <div className="  py-10 mx-auto md:px-6  ">
@@ -32,33 +39,43 @@ const ContactInfo = ({dictionary}:{dictionary:any}) => {
                     </div>
                 </div>
           <div className="mb-12 w-full shrink-0 grow-0 basis-auto md:px-3 mt-5 lg:mb-0 lg:w-5/12 lg:px-6">
-            <form>
+          <form 
+          className=" "
+          action={async (formData) => {
+            const {data,error} =  await sendEmail(formData)
+
+            if (error){
+                toast.error(error)
+                return;
+            }
+            toast.success('Email sent successfully')
+          }} 
+    >
               <div className="relative mb-6" data-te-input-wrapper-init>
-              <input  placeholder="First Name" type="text" id="first-name" name="first-name" className="text-[18px] p-2 w-full bg-white rounded border border-gray-300 focus:border-logoBlue focus:ring-2 focus:ring-logoBlue text-base outline-none text-black   px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+              <input  placeholder="First Name" type="firstName" id="firstName" maxLength={500} required  name="senderFirstName" className="text-[18px] p-2 w-full bg-white rounded border border-gray-300 focus:border-logoBlue focus:ring-2 focus:ring-logoBlue text-base outline-none text-black   px-3 leading-8 transition-colors duration-200 ease-in-out"/>
               </div>
               <div className="relative mb-6" data-te-input-wrapper-init>
-              <input placeholder="Last Name" type="text" id="last-name" name="last-name" className="w-full bg-white  p-2 rounded border border-gray-300 focus:border-logoBlue focus:ring-2 focus:ring-logoBlue text-base outline-none text-black   px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+              <input placeholder="Last Name" type="lastName" id="lastName" maxLength={500} required  name="senderLastName" className="w-full bg-white  p-2 rounded border border-gray-300 focus:border-logoBlue focus:ring-2 focus:ring-logoBlue text-base outline-none text-black   px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                
               </div>
               <div className="relative mb-6" data-te-input-wrapper-init>
-              <input placeholder="Phone Number" type="text" id="number" name="number" className="w-full bg-white  p-2 rounded border border-gray-300 focus:border-logoBlue focus:ring-2 focus:ring-logoBlue text-base outline-none text-black  px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+              <input placeholder="Phone Number"  type="phoneNumber" id="phoneNumber" maxLength={500} required  name="senderPhoneNumber"className="w-full bg-white  p-2 rounded border border-gray-300 focus:border-logoBlue focus:ring-2 focus:ring-logoBlue text-base outline-none text-black  px-3 leading-8 transition-colors duration-200 ease-in-out"/>
               </div>
               <div className="relative mb-6" data-te-input-wrapper-init>
-              <input placeholder="Email" type="text" id="email" name="email" className="w-full bg-white rounded border  p-2 border-gray-300 focus:border-logoBlue focus:ring-2 focus:ring-logoBlue text-base outline-none text-black   px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+              <input placeholder="Email"  type="email" id="email" maxLength={500} required  name="senderEmail" className="w-full bg-white rounded border  p-2 border-gray-300 focus:border-logoBlue focus:ring-2 focus:ring-logoBlue text-base outline-none text-black   px-3 leading-8 transition-colors duration-200 ease-in-out"/>
               </div>
               <div className="relative mb-6" data-te-input-wrapper-init>
-              <textarea placeholder="Tell Us About Your Case"   id="email" name="email" className="w-full bg-white rounded border  p-2 border-gray-300 focus:border-logoBlue focus:ring-2 focus:ring-logoBlue text-base outline-none text-black   px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+              <textarea placeholder="Tell Us About Your Case"   id="message" maxLength={500} required  name="senderMessage" className="w-full bg-white rounded border  p-2 border-gray-300 focus:border-logoBlue focus:ring-2 focus:ring-logoBlue text-base outline-none text-black   px-3 leading-8 transition-colors duration-200 ease-in-out"/>
                 
               </div>
               <div className="mb-6 inline-block min-h-[1.5rem] justify-center pl-[1.5rem] md:flex">
              
                
               </div>
-              <button type="button" data-te-ripple-init data-te-ripple-color="light"
-                className="mb-6 text-[18px] inline-block w-full rounded text-[18px]   px-6 pt-2.5 pb-2  font-medium uppercase hover:bg-logoBlue   shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]       lg:mb-0">
-                {dictionary.contactTop2.submitBtn}
-              </button>
+              
+              <SubmitBtn />
             </form>
+
           </div>
           <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
             <div className="flex flex-wrap mx-auto text-center  ">
@@ -70,8 +87,8 @@ const ContactInfo = ({dictionary}:{dictionary:any}) => {
               <div className="w-full">
                    <Image className="w-full mx-auto pt-5"src = {map} alt="/" width="1000" height="500" priority={true} />
               </div>
-                <button className="mt-12 sm:text-center xl:mt-5 p-5 text-white bg-logoBlue border-0 py-2 px-8 focus:outline-none hover:bg-gray rounded text-lg mx-auto items-center text-[20px] "> {dictionary.frontHeader.button1}</button>
-                   
+         
+   
               
               </div>
            

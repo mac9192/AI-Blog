@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation"
+import { createDirectus, rest, readItems } from '@directus/sdk';
 import React from 'react'
 import SocialLink from "../../../../blog-components/elements/socialLink"
 import PostBody from "../../../../blog-components/post/postBody"
@@ -15,16 +16,31 @@ import Head from 'next/head'
 
 export const getPostData = cache(async (postSlug: string, locale:string)=> {
   try {
-    const post = await directus.items("post").readByQuery({
-      filter: {
+    
+    const post = await directus.request(
+      readItems('post', {
+filter: {
         slug: {
           _eq: postSlug
         }
       },
-      fields: ["*","catgeory.id","category.title","author.id","author.first_name","author.last_name","translations.*", "category.translations.*"]
-    });
+        fields: [
+        "*", //Will get everything from our table
+        "author.id",
+        "author.first.name",// (.) period means: go up a level on tables to the relational tables
+        "author.last.name",
+        "category.id",
+        "category.title",
+        "translations.*",
+        "category.translations.*"
+      ],
+    
+      })
 
-    const postData = post?.data?.[0]
+    )    
+
+ 
+    const postData = post?.[0]
 
     if(locale === 'en'){
       return postData;
@@ -124,23 +140,31 @@ Route (app)                                    Size     First Load JS
       };
     }); */
     try {
-      const posts = await directus.items("post").readByQuery({
-        filter: {
-          status: {
-            _eq: "published",
-          },
-        },
-        fields: ["slug"],
-      });
+
+      
+
+             
+      const posts = await directus.request(
+        readItems('post', {
+  filter: {
+    status: {
+      _eq: "published",
+    },
+  },
+  fields: ["slug"],
+      
+        })
   
-      const params = posts?.data?.map((post:any) => {
+      )    
+  
+      const params = posts?.map((post:any) => {
         return {
           slug: post.slug as string,
           lang: "en",
         };
       });
   
-      const localisedParams = posts?.data?.map((post:any) => {
+      const localisedParams = posts?.map((post:any) => {
         return {
           slug: post.slug as string,
           lang: "es",
@@ -173,20 +197,27 @@ const page = async ({params}:{params:{slug:string; lang:string}}) => {
   const post = await getPostData(postSlug, locale)
 
 
+  console.log('date:...',(post as any).date_created)
+  console.log('dateUP:...',(post as any).date_updated)
+  console.log('slug', (post as any)?.slug)
+  console.log('image', (post as any).image)
+const dateCreated = (post as any).date_updated
+console.log('const date', (post as any) .date_created)
+
   const jsonLd = {
       "@context": "https://schema.org", 
       "@type": "Article",
-      "headline": post.title,
+      "headline": post?.title,
       "image": `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/post/${postSlug}/opengraph-image.png`,
-      "author": post.author.first_name + " " + post.author.last_name, 
-      "genre": post.category.title,
+      "author": (post as any).author.first_name + " " + (post as any).author.last_name, 
+      "genre": post?.category.title,
       "publisher": siteConfig.siteName,
       "url": `${process.env.NEXT_PUBLIC_SITE_URL}/post/${postSlug}`,
-      "datePublished": new Date(post.date_created).toISOString,
-      "dateCreated": new Date(post.date_created).toISOString,
-      "dateModified": new Date(post.date_updated).toISOString,
-      "description": post.description,
-      "articleBody": post.body,
+      "datePublished": new Date((post as any).date_created).toISOString,
+      "dateCreated": new Date((post as any).date_created).toISOString,
+      "dateModified": new Date((post as any).date_updated).toISOString,
+      "description": post?.description,
+      "articleBody": post?.body,
 }
   
 
@@ -196,7 +227,12 @@ const page = async ({params}:{params:{slug:string; lang:string}}) => {
   
   const dictionary = await getDictionary(locale)
 
+  console.log('post test', post)
+
   return (
+  
+  
+  
   <div className="bg-white pt-10 ">
 
 
@@ -206,28 +242,29 @@ const page = async ({params}:{params:{slug:string; lang:string}}) => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
     
-      <div className="container mx-auto text-white text-left space-y-10">
+      <div className="md:container md:mx-auto sm:p-10 md:p-0 text-white text-left space-y-10">
+        
         {/*Post Hero */}
-      <PostHero locale={locale} post={post} />
+      <PostHero locale={locale} post={post as any} />
          {/*Post Body and Social Share */}
       <div className="flex flex-col md:flex-row gap-10 mt-10">
-        <div className="relative mt-11">
+        <div className="relative mt-11   ">
            <div className="sticky flex md:flex-col items-center gap-5 top-40">
-             <div className="font-medium md:hidden">Share this content: </div>
+             <div className="font-medium md:hidden text-black text-2xl">Share this content: </div>
              <SocialLink
           isShareURL={true}
           platform="facebook"
-          link={`https://www.facebook.com/sharer/sharer.php?u=${`${process.env.NEXT_PUBLIC_SITE_URL}/post/${post.slug}`}`}
+          link={`https://www.facebook.com/sharer/sharer.php?u=${`${process.env.NEXT_PUBLIC_SITE_URL}/post/${(post as any).slug}`}`}
         />
              <SocialLink
           isShareURL={true}
           platform="twitter"
-          link={`https://twitter.com/intent/tweet?url=${`${process.env.NEXT_PUBLIC_SITE_URL}/post/${post.slug}`}`}
+          link={`https://twitter.com=${`${process.env.NEXT_PUBLIC_SITE_URL}/post/${(post as any).slug}`}`}
         />
              <SocialLink
           isShareURL={true}
           platform="linkedin"
-          link={`https://www.linkedin.com/shareArticle?mini=true&url=${`${process.env.NEXT_PUBLIC_SITE_URL}/post/${post.slug}`}`}
+          link={`https://www.linkedin.com/shareArticle?mini=true&url=${`${process.env.NEXT_PUBLIC_SITE_URL}/post/${(post as any).slug}`}`}
         />
             
            </div>

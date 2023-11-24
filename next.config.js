@@ -25,11 +25,12 @@ const nextConfig = {
                 protocol:"https"
             },
             
-        ]
+        ],
+      
     },
-   /* experimental:{
+  experimental:{
         serverActions: true,
-    }*/
+  }
 }
 
 module.exports = nextConfig

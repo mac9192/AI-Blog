@@ -19,6 +19,7 @@ export default async function og({
 }) {
   // Get Data from CMS
   const post = await getPostData(slug, lang);
+  console.log('openGraph', post)
 
   return new ImageResponse(
     (
@@ -27,7 +28,7 @@ export default async function og({
         <div tw="absolute flex inset-0">
           <img
             tw="flex flex-1 object-cover w-full h-full object-center"
-            src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${post.image}`}
+            src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${(post as any).image}`}
             alt={post?.title!!}
           />
           {/* Overlay */}
@@ -50,11 +51,11 @@ export default async function og({
               {post?.category.title}
             </div>
             <div tw="w-4 h-4 mx-6 rounded-full bg-neutral-300 " />
-            <div>{`${post?.author.first_name} ${post?.author.last_name}`}</div>
+            <div>{`${(post as any).author.first_name} ${(post as any).author.last_name}`}</div>
             <div tw="w-4 h-4 mx-6 rounded-full bg-neutral-300" />
             <div>{getReadingTime(post?.body!!, lang)}</div>
             <div tw="w-4 h-4 mx-6 rounded-full bg-neutral-300" />
-            <div>{getRelativeDate(post?.date_created!!, lang)}</div>
+            <div>{getRelativeDate((post as any).date_created!!, lang)}</div>
           </div>
         </div>
       </div>

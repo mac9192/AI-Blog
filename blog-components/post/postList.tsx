@@ -10,6 +10,8 @@ interface PostListProps {
 }
 
 const postList = ({posts, layout = "horizontal", locale} : PostListProps) => {
+
+  
   return (
     <div className="sm:flex-col grid grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10 lg:grid-flow-col-2 sm:grid-flow-col-1 lg:auto-cols-fr">
         {posts.map((post) => (

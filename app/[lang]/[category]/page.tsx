@@ -6,6 +6,7 @@ import directus from '../../../lib/directus'
 import { getDictionary } from '../../../lib/getDictionary'
 import {Post} from '../../../types/collections'
 import { cache } from 'react'
+import { createDirectus, rest, readItems } from '@directus/sdk';
 import { revalidatePath } from 'next/cache'
 
 
@@ -19,29 +20,36 @@ import { revalidatePath } from 'next/cache'
 export const getCategoryData = cache(
   async (categorySlug: string, locale: string) => {
     try {
-      const category = await directus.items("category").readByQuery({
-        filter: {
+
+      const category = await directus.request(
+        readItems('post', {
+  filter: {
           slug: {
-            _eq: categorySlug,
-          },
+            _eq: categorySlug
+          }
         },
-        fields: [
-          "*",
+          fields: [
+          "*", //Will get everything from our table
+          "author.id",
+          "author.first.name",// (.) period means: go up a level on tables to the relational tables
+          "author.last.name",
+          "category.id",
+          "category.title",
           "translations.*",
-          "posts.*",
-          "posts.author.id",
-          "posts.author.first_name",
-          "posts.author.last_name",
-          "posts.category.id",
-          "posts.category.title",
-          "posts.translations.*",
-        ], 
-      }, );
+          "category.translations.*"
+        ],
+      
+        })
+  
+      )    
+
+
+    
 
       if (locale === "en") {
-        return category?.data?.[0];
+        return category?.[0];
       } else {
-        const fetchedCategory = category?.data?.[0];
+        const fetchedCategory = category?.[0];
         const localisedCategory = {
           ...fetchedCategory,
           title: fetchedCategory.translations[0].title,
@@ -134,23 +142,33 @@ export const generateStaticParams = async () => {
   }); */
 
   try {
-    const categories = await directus.items("category").readByQuery({
-      filter: {
-        status: {
-          _eq: "published",
-        },
-      },
-      fields: ["slug"],
-    });
 
-    const params = categories?.data?.map((category:any) => {
+
+    const categories = await directus.request(
+      readItems("category", {
+filter: {
+        slug: {
+          _eq: "published"
+        }
+      },
+        fields: [
+    
+        "slug",
+      ],
+    
+      })
+
+    )    
+   
+
+    const params = categories?.map((category:any) => {
       return {
         category: category.slug as string,
         lang: "en",
       };
     });
 
-    const localisedParams = categories?.data?.map((category:any) => {
+    const localisedParams = categories?.map((category:any) => {
       return {
         category: category.slug as string,
         lang: "es",

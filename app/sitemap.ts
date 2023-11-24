@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import directus from "../lib/directus"
- 
+import { createDirectus, rest, readItems } from '@directus/sdk';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 
@@ -11,14 +12,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Get Posts
 
 
-  const posts = await directus.items("post").readByQuery({
-    fields: [
+  const posts = await directus.request(
+    readItems('post', {
+
+      fields: [
         "slug",
         "date_updated",
     ],
-  }) ;
+    })
 
-  const postLinks = posts?.data?.map((post:any) => {
+  )  
+
+ 
+
+  const postLinks = posts?.map((post:any) => {
       return[
           {
                url: `${baseURL}/en/post/${post.slug}`,
@@ -41,24 +48,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Get Categories
 
-  const categories = await directus.items("category").readByQuery({
-    fields: [
-        "slug",
-        "date_updated",
-    ],
-  }) ;
 
-  const categoriesTranslations = await directus.items("category_translations").readByQuery({
-    fields: [
+  const categories = await directus.request(
+    readItems('category', {
+
+      fields: [
         "slug",
         "date_updated",
-        "title",
     ],
-  }) ;
+    })
+
+  )  
+
+
+
+  const  categoriesTranslations = await directus.request(
+    readItems("category_translations", {
+
+      fields: [
+        "slug",
+        "date_updated",
+    ],
+    })
+
+  )  
+
+
+ 
 
   console.log(categoriesTranslations)
 
-  const categoryLinks = categories?.data?.map((category:any) => {
+  const categoryLinks = categories?.map((category:any) => {
     return[
         {
              url: `${baseURL}/en/${category.slug}`,

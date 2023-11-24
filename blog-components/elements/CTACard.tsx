@@ -5,6 +5,7 @@ import directus from '../../lib/directus'
 import { revalidatePath, revalidateTag } from 'next/cache'
 import { getDictionary } from '../../lib/getDictionary'
 import { useState } from "react";
+import { createDirectus, rest, readItems,createItems, createItem } from '@directus/sdk';
 
 /* eslint-disable react/no-unescaped-entities */
 const CTACard = ({dictionary}:{dictionary:any}) => {
@@ -50,13 +51,18 @@ const CTACard = ({dictionary}:{dictionary:any}) => {
     const [email, setEmail] = useState("");
     const [isHandling, setIsHandling] = useState(false);
   
-    const submitHandler = async (e: FormEvent) => {
+    const submitHandler = async (e: FormEvent, ) => {
       try {
         e.preventDefault();
         setIsHandling(true);
-        await directus.items("subscribers").createOne({
-          email,
-        });
+
+
+        await directus.request(
+          createItem("subscribers", {
+              email,
+           }));
+       
+        
         setIsHandling(false);
         setEmail("");
       } catch (error) {

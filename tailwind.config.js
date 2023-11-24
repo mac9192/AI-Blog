@@ -47,6 +47,8 @@ module.exports = {
           'slip': 'url("public/assets/card-slip-and-falls.jpg")',
           'death': 'url("public/assets/card-wrongful-death.jpg")',
           'worker':'url("public/assets/card-workComp.jpg")',
+          'atlanta':'url("public/assets/img-atl1.svg")',
+          'atlsky': 'url("public/assets/img-atlsky1.svg")',
         },
 
       fontFamily: {

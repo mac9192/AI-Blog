@@ -14,6 +14,8 @@ const postContent = async ({post, isPostPage = false, locale}:PostContentProps) 
 
   const dictionary = await getDictionary(locale)
 
+   
+
   return (
     <div className="space-y-2 text-black ">
         <div 

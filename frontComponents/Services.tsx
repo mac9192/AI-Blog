@@ -5,7 +5,7 @@ import immigration from '../public/assets/img-immigration2.webp'
 
 const services = ({dictionary}:{dictionary:any}) => {
   return (
-<div className="flex flex-col container mx-auto md:flex-row">
+<div className="flex flex-col md:container md:mx-auto  sm:p-10 md:flex-row">
  
   <div className="w-full">
 
@@ -15,13 +15,13 @@ const services = ({dictionary}:{dictionary:any}) => {
 
  
 
-        <div className="text-center py-10 text-[36px] text-logoBlue  ">
+        <div className="text-center py-10 text-5xl text-logoBlue mt-8 ">
           {dictionary.services.header}
         </div>
 
 
 
-    <div className="flex flex-col md:flex-row  justify-center gap-x-20 items-stretch">
+    <div className="flex flex-col md:flex-row  mt-10 justify-center gap-x-20 items-stretch">
     <div>
             <Image className="items-center rounded"src = {crash} alt="/" width="700" height="50" priority={true} quality={100}/>
   <h2 className="p-5 mx-auto text-center text-[32px]">{dictionary.services.personalInjury}</h2>

@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import atl from '../public/assets/img-cityatl.webp'
-import stars from '../public/assets/icon-stars.png'
+import stars from '../public/assets/icon-star.svg'
 import { ParallaxBanner } from 'react-scroll-parallax';
 
 
@@ -12,43 +12,44 @@ const Testimonials = ({dictionary}:{dictionary:any}) => {
   return (
     <div>
    
-   <div className="relative ">
-    <Image
-      layout="fill" 
-      className="object-center object-cover pointer-events-none"
-      src={atl}
-      alt="atlanta"
-      priority
-    />
-   <div className="relative z-1 md:p-12">
-      <div className="flex flex-col">
-      <div className="  px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-       
-       <h2 className="mb-4 text-4xl  w-full text-center mx-auto tracking-tight leading-none text-white md:text-5xl lg:text-6xl  m-10 ">{dictionary.header2.header}</h2>
-       
-           
-          <div className="flex items-center justify-center text-white">
-            
-         </div>
-      
-           
-         </div>
-         <div className="flex bg items-center justify-center text-white sm:m-10 text-center">
-        <p className="md:text-[28px] md:p-[80px] max-w-7xl text-2xl w-full ">{dictionary.header2.testimonials}</p>
-    </div>
-    <div className="flex items-center justify-center text-white">
-            <Image className="text-white bg-fixed  "src = {stars} alt="/" width="200" height="50" priority={true} />
-    </div>
+   <div className=" ">
+          <div className="flex items-center justify-center h-[600px] bg-fixed bg-atlanta bg-cover space-x-10  ">
+            <div className="flex sm:flex-col md:flex-r  w-3/4 h-96">
+                   <p className="text-6xl tracking-wide text-white  mx-auto text-center md:mt-[70px] sm:mt-[-20px] ">
+                   WHAT OUR CLIENTS SAY
+                   </p>
 
-    <div className="flex flex-col py-12">
-        <button className="flex mx-auto text-white bg-logoBlue  border-0 py-2 px-8 focus:outline-none hover:bg-gray rounded text-lg">{dictionary.header2.btn}</button>
-      
-    
-    </div>
-    
-      </div>
+                   <p className="md:text-2xl sm:text-xl tracking-wide text-white  mx-auto text-center md:mt-[70px] sm:mt-[40px] ">
+                   “Strong work ethic, very helpful and respectful. They helped us with an accident case. They always answered any question we had. I loved that they spoke Spanish so my mother would understand the process from beginning to end.”
+                   </p>
+                 
+                   <div className=" mx-auto mt-8 gap-x-3 flex-row flex ">
+                      <div>
+                      <Image className="    " width={20} height={10} src={stars} alt=""/>
+                      </div>
+                      <div>
+                      <Image className="    " width={20} height={10} src={stars} alt=""/>
+                      </div>
+                      <div>
+                      <Image className="    " width={20} height={10} src={stars} alt=""/>
+                      </div>    <div>
+                      <Image className="    " width={20} height={10} src={stars} alt=""/>
+                      </div>
+                      <div>
+                      <Image className="    " width={20} height={10} src={stars} alt=""/>
+                      </div>
+                    
+                  </div>
+               
+
+                 
+            </div>
+     
+         
+     
    </div>
-</div>
+
+   </div>
   
     </div>
   )

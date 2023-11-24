@@ -24,7 +24,7 @@ const Immigration = async ({
         <HeaderImmigration />
         <ServiceCardsImmigration />
         <TestimonialsImmigration />
-        <HomeBlog dictionary={dictionary}/>
+        
  </div>
     )
 }

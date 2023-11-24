@@ -15,6 +15,8 @@ import Providers from '../../chatbot-components/Providers'
 import Chat from '../../chatbot-components/Chat'
 
 import ContactInfo from '@frontComponents/ContactInfo'
+import HomeBlog from '@frontComponents/HomeBlog'
+import { Toaster } from 'react-hot-toast'
 
 const abhaya_Libre = Libre_Franklin({weight:'200', subsets: ['latin'] })
 
@@ -87,8 +89,9 @@ export default async function RootLayout({
         {/*<Navbar locale={lang} /> */}
         
         <div className="min-h-[calc(100vh-300px)]">{children}</div>
-
+        <HomeBlog locale={lang} dictionary={dicitionary} />
         <ContactInfo dictionary={dicitionary}/>
+        <Toaster position="top-right" />
         <Footer dictionary={dicitionary}/>
         {/*<Footer locale={lang} /> */}
         <Chat />
