@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next'
+/*import { MetadataRoute } from 'next'
 import directus from "../lib/directus"
 import { createDirectus, rest, readItems } from '@directus/sdk';
 
@@ -131,3 +131,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...dynamicLinks
   ]
 }
+*/
