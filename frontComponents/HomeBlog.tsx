@@ -15,14 +15,14 @@ import HomeBlogPosts  from './HomeBlogPosts';
 import {Post} from '../DUMMY_DATA'
 
 
- 
+ /*
 export const generateStaticParams = async () =>{
      return i18n.locales.map((lang) =>{
        return {
          lang
        }
      })
-   }
+   } */
    
    interface navBar {
     locale: string,

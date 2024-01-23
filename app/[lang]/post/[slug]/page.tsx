@@ -67,47 +67,7 @@ filter: {
 )
 
 //Generate Metadata Function
-
-export const generateMetadata = async ({
-  params: {slug, lang},
-}: {
-  params: {
-    slug: string,
-    lang: string,
-  }
-}) =>{
-  // Get post Data from Directus
-  const post = await getPostData(slug, lang);
-
-  return {
-    title: post?.title,
-    description: post?.description,
-    openGraph: {
-      title: post?.title,
-      description: post?.description,
-      url:`${process.env.NEXT_PUBLIC_SITE_URL}/${lang}/post/${slug}`,
-      siteName: post?.title,
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_SITE_URL}/${lang}/post/${slug}/opengraph-image.png`,
-          width: 1200,
-          height: 628,
-        },
-  
-      ],
-      locale: lang,
-      type: 'website',
-    },
-    alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/post/${slug}`,
-      languages: {
-         'en-US': `${process.env.NEXT_PUBLIC_SITE_URL}/en/post/${slug}`,
-        'es-ES': `${process.env.NEXT_PUBLIC_SITE_URL}/es/post/${slug}`,
-      }
-    }
-  }
-
-}
+ 
 
  /*
 
@@ -133,12 +93,13 @@ Route (app)                                    Size     First Load JS
 
   //Pre-populates slugs at build time for SSR (helps SEO)
   
+  /*
   export const generateStaticParams = async () => {
     /* return DUMMY_POSTS.map((post) => {
       return {
         slug: post.slug,
       };
-    }); */
+    }); 
     try {
 
       
@@ -180,7 +141,7 @@ Route (app)                                    Size     First Load JS
       throw new Error("Error fetching posts");
     }
   };
-    
+    */
 
 //We get slug param bc folder is [slug]
 const page = async ({params}:{params:{slug:string; lang:string}}) => {

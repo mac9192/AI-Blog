@@ -12,11 +12,11 @@ import Navbar from '../../frontComponents/Navbar'
 import TopNavigation from '../../frontComponents/topNavigation'
 import Navigation from '../../frontComponents/Navigation'
 import Providers from '../../chatbot-components/Providers'
-import Chat from '../../chatbot-components/Chat'
 
 import ContactInfo from '@frontComponents/ContactInfo'
 import HomeBlog from '@frontComponents/HomeBlog'
 import { Toaster } from 'react-hot-toast'
+import Chat from '@chatbot-components/Chat'
 
 const abhaya_Libre = Libre_Franklin({weight:'200', subsets: ['latin'] })
 
@@ -62,7 +62,7 @@ export const generateMetadata = async ({
       },
     },
     /* Verification for Google Search Console */
- 
+
   };
 };
 
@@ -80,9 +80,11 @@ export default async function RootLayout({
   const dicitionary = await getDictionary(lang);
   return (
     <html lang={lang}>
- 
+     <Script id= 'DEMO_MAP_ID' async src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API}&callback=console.debug&libraries=maps,marker&v=beta`}>
+    </Script>
  <Providers>
     <body className={abhaya_Libre.className}>
+        {}
    
         <TopNavigation />
         <Navigation locale={lang} dictionary={dicitionary}  />

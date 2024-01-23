@@ -9,7 +9,8 @@ import directus from "../../../lib/directus"
 import { getDictionary } from '../../../lib/getDictionary'
 
 import {i18n} from "../../../i18n.config"
- 
+
+/*
 export const generateStaticParams = async () =>{
   return i18n.locales.map((lang) =>{
     return {
@@ -17,7 +18,7 @@ export const generateStaticParams = async () =>{
     }
   })
 }
-
+*/
 
 
 export default async function page ({
@@ -79,6 +80,8 @@ export default async function page ({
 
   const posts = await getAllPosts();
 
+  console.log(posts)
+
   
 
 //console.log("new",posts)
@@ -99,7 +102,7 @@ const dictionary = await getDictionary(locale)
         {/*Reverse direction of cards */}
       
         <CTACard  dictionary={dictionary} />
-        <PostCard  locale={locale} reverse post={ posts[3]} />
+         
         <PostList  locale={locale}posts={ posts.filter((_post:any,index:any) => index > 3 && index < 999)} />
       </div>
     </div>

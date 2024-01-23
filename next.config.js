@@ -9,7 +9,7 @@ const nextConfig = {
                 protocol: "https"
             },
             {
-                hostname: "directus-production-af9e.up.railway.app",
+                hostname: "directus-production-c512.up.railway.app",
                 protocol:"https"
             },
             {
@@ -24,6 +24,9 @@ const nextConfig = {
                 hostname: "https://youtube.com",
                 protocol:"https"
             },
+
+
+       
             
         ],
       

@@ -42,3 +42,5 @@ const postCard = ({post, layout = "vertical", reverse = false, locale }:PostProp
 }
 
 export default postCard;
+
+
