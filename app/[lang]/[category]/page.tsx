@@ -132,7 +132,7 @@ export const generateMetadata = async ({
 //Pre-populates slugs at build time for SSR (helps SEO)
 
 
-
+/*
 export const generateStaticParams = async () => {
   // This for DUMMY DATA Approach
   /* return DUMMY_CATEGORIES.map((category) => {
@@ -140,7 +140,7 @@ export const generateStaticParams = async () => {
       category: category.slug,
     };
   }); */
-
+/*
   try {
 
 
@@ -187,6 +187,9 @@ filter: {
             category: category.slug //We get category param bc folder is [category]
         }
     })*/
+
+
+
 
 
 /***********/
